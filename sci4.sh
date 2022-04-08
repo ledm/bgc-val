@@ -1,11 +1,29 @@
 module load jaspy/2.7
 x=0
 #while [ 1 -eq 1 ];
-while [ $x -le 20 ]
+while [ $x -le 60 ]
 do
     # fast:
     ./analysis_timeseries.py u-by230 fast #' : 'black', #standard UKESM1.1
     ./analysis_timeseries.py u-ck416 fast #' : 'black', #standard UKESM1.1
+    ./analysis_timeseries.py u-ck416 level1 #' : 'black', #standard UKESM1.1
+
+
+    #GEOMIP
+    ./analysis_timeseries.py u-be653 level1
+    ./analysis_timeseries.py u-be392 level1
+    ./analysis_timeseries.py u-be396 level1
+    ./analysis_timeseries.py u-be537 level1
+    ./analysis_timeseries.py u-be394 level1
+    ./analysis_timeseries.py u-be398 level1
+    ./analysis_timeseries.py u-bi105 level1
+    ./analysis_timeseries.py u-bi154 level1
+    ./analysis_timeseries.py u-bi155 level1
+    ./analysis_timeseries.py u-bg157 level1
+    ./analysis_timeseries.py u-bg158 level1
+    ./analysis_timeseries.py u-bg159 level1
+
+
 #    ./analysis_timeseries.py u-by230 fast #' : 'black', #standard UKESM1.1
 
 #    ./analysis_timeseries.py u-cf927 fast #' : 'green', #CN-fast standard radiation

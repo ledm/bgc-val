@@ -329,20 +329,20 @@ def analysis_timeseries(jobID = "u-ab671",
 			#analysisKeys.append('OMZMeanDepth')		# work in progress
 			#analysisKeys.append('OMZThickness')            # Oxygen Minimum Zone Thickness
 			#analysisKeys.append('TotalOMZVolume')		# work in progress
-                        analysisKeys.append('O2')                      # WOA Oxygen
+                        #analysisKeys.append('O2')                      # WOA Oxygen
                         #analysisKeys.append('AOU')                      # Apparent Oxygen Usage 
                         #analysisKeys.append('WindStress')               # Wind Stress                        
                         #analysisKeys.append('Dust')                    # Dust
                         #analysisKeys.append('TotalDust')               # Total Dust
                         #analysisKeys.append('TotalDust_nomask')
-			analysisKeys.append('DIC')			# work in progress
+			#analysisKeys.append('DIC')			# work in progress
 			#analysisKeys.append('DrakePassageTransport')	# DrakePassageTransport
 			#analysisKeys.append('TotalIceArea')		# work in progress
 			#analysisKeys.append('CHN')
 			#analysisKeys.append('CHD')
 			#analysisKeys.append('CHL')	
 			#analysisKeys.append('pH')                      			
-                        analysisKeys.append('Alk')     # Glodap Alkalinity
+                        #analysisKeys.append('Alk')     # Glodap Alkalinity
 
 			#if jobID in ['u-am004','u-am005']:
 	                #        analysisKeys.append('DMS_ANDR')                 # DMS Anderson
@@ -352,9 +352,9 @@ def analysis_timeseries(jobID = "u-ab671",
 			#analysisKeys.append('Iron')			# work in progress
                         #analysisKeys.append('DTC')                 # work in progress
 
-			analysisKeys.append('Iron')			# work in progress
-                        analysisKeys.append('N')                        # WOA Nitrate
-                        analysisKeys.append('Si')                        # WOA Nitrate                    
+			#analysisKeys.append('Iron')			# work in progress
+                        #analysisKeys.append('N')                        # WOA Nitrate
+                        #analysisKeys.append('Si')                        # WOA Nitrate                    
                         #analysisKeys.append('IntPP_OSU')               # OSU Integrated primpary production
                         #analysisKeys.append('Chl_CCI')
 			#analysisKeys.append('CHL_MAM')
@@ -367,7 +367,7 @@ def analysis_timeseries(jobID = "u-ab671",
 			#analysisKeys.append('GC_CHL_DJF')			                      
                         #####
                         # Physics switches:
-                        # analysisKeys.append('Temperature')          #             # WOA Temperature
+                        analysisKeys.append('Temperature')          #             # WOA Temperature
 #                        analysisKeys.append('HeatFlux')
 #                        analysisKeys.append('TotalHeatFlux')
 

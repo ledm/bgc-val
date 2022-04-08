@@ -125,21 +125,21 @@ def shifttimes(mdata, jobID,year0=False):
                         datas.append(mdata[t])
                 return times, datas
 
-	if yeasr0 in ['UKESM11_Fast_piControl_2',]:
+	if year0 in ['UKESM11_Fast_piControl_2',]:
 		# Lee: I suggest you adjust the dates so 1991 in ck416 becomes 1850
 		# 2743 in by230 also becomes 1850
 
-        for t in sorted(mdata.keys()):
-			if jobID == 'u-by230':
-				t1 = t - (2743. - 1850.)
-                times.append(float(t1))
-                datas.append(mdata[t])
-			elif jobID == 'u-ck416':
-				t1 = t - (1991. - 1850.)
-                times.append(float(t1))
-                datas.append(mdata[t])
-			else: asssert 0
-        return times, datas
+            for t in sorted(mdata.keys()):
+                if jobID == 'u-by230':
+                    t1 = t - (2743. - 1850.)
+                    times.append(float(t1))
+                    datas.append(mdata[t])
+                elif jobID == 'u-ck416':
+                    t1 = t - (1991. - 1850.)
+                    times.append(float(t1))
+                    datas.append(mdata[t])
+                else: assert 0
+            return times, datas
 
 	if year0 in ['UKESM11_historical1',]:
                 for t in sorted(mdata.keys()):
