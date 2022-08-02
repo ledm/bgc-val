@@ -2763,44 +2763,18 @@ def main():
 		exit
 	else:
 
-
-                GeoMIP = True
-                if GeoMIP:
+                GC5N96ORCA1spinup = True
+                if GC5N96ORCA1spinup:
+ 
                         customColours = {
-		                #a) ScenarioMIP ssp585 (the basis of the G6 runs)
-				'u-be653'  : 'black', #; ScenarioMIP ssp585 (the basis of the G6 runs) r1
-				'u-be392'  : 'dimgrey', # ScenarioMIP ssp585 (the basis of the G6 runs) r4
-				'u-be396'  : 'grey', # ; ScenarioMIP ssp585 (the basis of the G6 runs) r8
-
-				#b) ScenarioMIP ssp245 (the target of the G6 runs)
-				'u-be537'  : 'maroon',# ScenarioMIP ssp245 (the target of the G6 runs) r1
-				'u-be394'  : 'red',# ScenarioMIP ssp245 (the target of the G6 runs) r4
-				'u-be398'  : 'salmon',# ScenarioMIP ssp245 (the target of the G6 runs) r8
-
-				#c) GeoMIP G6sulfur (SO2 injection)
-				'u-bi105'  : 'darkgreen',# GeoMIP G6sulfur (SO2 injection)r1
-				'u-bi154'  : 'green' ,#GeoMIP G6sulfur (SO2 injection)r4
-				'u-bi155'  : 'turquoise' ,#GeoMIP G6sulfur (SO2 injection) r8
-
-				#d) GeoMIP G6solar (solar-"constant" reduction)
-				'u-bg157'  : 'darkblue', #  ;GeoMIP G6solar (solar-"constant" reduction) r1
-				'u-bg158'  : 'blue', #  ;GeoMIP G6solar (solar-"constant" reduction) r4
-				'u-bg159'  : 'dodgerblue', #  ; GeoMIP G6solar (solar-"constant" reduction) r8
-
+	                        'u-cm977': 'red',
+	                        'u-cn618': 'green',
+	                        'u-cp416': 'purple',
                                 }
-                        geomipdesc = {
-		                'u-be653': 'ScenarioMIP ssp585 (the basis of the G6 runs) r1',
-				'u-be392': 'ScenarioMIP ssp585 (the basis of the G6 runs) r4',
-				'u-be396': 'ScenarioMIP ssp585 (the basis of the G6 runs) r8',
-				'u-be537': 'ScenarioMIP ssp245 (the target of the G6 runs) r1',
-				'u-be394': 'ScenarioMIP ssp245 (the target of the G6 runs) r4',
-				'u-be398': 'ScenarioMIP ssp245 (the target of the G6 runs) r8',
-				'u-bi105': 'GeoMIP G6sulfur (SO2 injection)r1',
-				'u-bi154': 'GeoMIP G6sulfur (SO2 injection)r4',
-				'u-bi155': 'GeoMIP G6sulfur (SO2 injection) r8',
-				'u-bg157': 'GeoMIP G6solar (solar-"constant" reduction) r1',
-				'u-bg158': 'GeoMIP G6solar (solar-"constant" reduction) r4',
-				'u-bg159': 'GeoMIP G6solar (solar-"constant" reduction) r8',
+                        custom_descriptions = {
+	                        'u-cm977': 'GC5 N96 ORCA1 spin-up 1',
+	                        'u-cn618': 'GC5 N96 ORCA1 spin-up 2',
+	                        'u-cp416': 'GC5 N96 ORCA1 spin-up 3 ',                        
                         }
                         cnthicknesses = defaultdict(lambda: 0.7)
                         linestyles = defaultdict(lambda: '-')
@@ -2809,15 +2783,65 @@ def main():
                                 physics=1,
                                 bio=1,
                                 debug=0,
-                                year0=None,
+                                year0=False,
+                                jobDescriptions=custom_descriptions,
+                                analysisname='GC5N96ORCA1spinup',
+                                lineThicknesses= cnthicknesses,
+                                linestyles = linestyles,)
+
+
+                GeoMIP = False
+                if GeoMIP:
+                        customColours = {
+		                #a) ScenarioMIP ssp585 (the basis of the G6 runs)
+						'u-be653'  : 'black', #; ScenarioMIP ssp585 (the basis of the G6 runs) r1
+						'u-be392'  : 'dimgrey', # ScenarioMIP ssp585 (the basis of the G6 runs) r4
+						'u-be396'  : 'grey', # ; ScenarioMIP ssp585 (the basis of the G6 runs) r8
+
+						#b) ScenarioMIP ssp245 (the target of the G6 runs)
+						'u-be537'  : 'maroon',# ScenarioMIP ssp245 (the target of the G6 runs) r1
+						'u-be394'  : 'red',# ScenarioMIP ssp245 (the target of the G6 runs) r4
+						'u-be398'  : 'salmon',# ScenarioMIP ssp245 (the target of the G6 runs) r8
+
+						#c) GeoMIP G6sulfur (SO2 injection)
+						'u-bi105'  : 'darkgreen',# GeoMIP G6sulfur (SO2 injection)r1
+						'u-bi154'  : 'green' ,#GeoMIP G6sulfur (SO2 injection)r4
+						'u-bi155'  : 'turquoise' ,#GeoMIP G6sulfur (SO2 injection) r8
+
+						#d) GeoMIP G6solar (solar-"constant" reduction)
+						'u-bg157'  : 'darkblue', #  ;GeoMIP G6solar (solar-"constant" reduction) r1
+						'u-bg158'  : 'blue', #  ;GeoMIP G6solar (solar-"constant" reduction) r4
+						'u-bg159'  : 'dodgerblue', #  ; GeoMIP G6solar (solar-"constant" reduction) r8
+
+                                }
+                        geomipdesc = {
+		                'u-be653': 'ScenarioMIP ssp585 (the basis of the G6 runs) r1',
+						'u-be392': 'ScenarioMIP ssp585 (the basis of the G6 runs) r4',
+						'u-be396': 'ScenarioMIP ssp585 (the basis of the G6 runs) r8',
+						'u-be537': 'ScenarioMIP ssp245 (the target of the G6 runs) r1',
+						'u-be394': 'ScenarioMIP ssp245 (the target of the G6 runs) r4',
+						'u-be398': 'ScenarioMIP ssp245 (the target of the G6 runs) r8',
+						'u-bi105': 'GeoMIP G6sulfur (SO2 injection)r1',
+						'u-bi154': 'GeoMIP G6sulfur (SO2 injection)r4',
+						'u-bi155': 'GeoMIP G6sulfur (SO2 injection) r8',
+						'u-bg157': 'GeoMIP G6solar (solar-"constant" reduction) r1',
+						'u-bg158': 'GeoMIP G6solar (solar-"constant" reduction) r4',
+						'u-bg159': 'GeoMIP G6solar (solar-"constant" reduction) r8',
+                        }
+                        cnthicknesses = defaultdict(lambda: 0.7)
+                        linestyles = defaultdict(lambda: '-')
+                        timeseries_compare(
+                                customColours,
+                                physics=1,
+                                bio=1,
+                                debug=0,
+                                year0=False,
                                 jobDescriptions=geomipdesc,
                                 analysisname='UKESM11_GeoMIP',
                                 lineThicknesses= cnthicknesses,
                                 linestyles = linestyles,)
 
-               
-
-
+                return 
                 UKESM11_fast = True
                 if UKESM11_fast:
 

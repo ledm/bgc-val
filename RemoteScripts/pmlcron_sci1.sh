@@ -12,7 +12,7 @@ echo jobid=$jobid
 export jobid=$jobid
 
 # ssh -A -X ldemora@jasmin-login1.ceda.ac.uk "/home/users/ldemora/workspace/ukesm-validation/RemoteScripts/helloOnMass.sh $jobid"
-
+echo 'running: ssh -A -X ldemora@login1.jasmin.ac.uk "/home/users/ldemora/workspace/ukesm-validation/RemoteScripts/runWholePackageOnSci2.sh $jobid'
 # ssh -A -X ldemora@jasmin-login1.ceda.ac.uk "/home/users/ldemora/workspace/ukesm-validation/RemoteScripts/runWholePackageOnSci1.sh $jobid"
 ssh -A -X ldemora@login1.jasmin.ac.uk "/home/users/ldemora/workspace/ukesm-validation/RemoteScripts/runWholePackageOnSci2.sh $jobid"
 

@@ -136,8 +136,8 @@ if True:
 #	physKeys.append('MeridionalCurrent')        	# Meridional Veloctity
 #	physKeys.append('VerticalCurrent')          	# Vertical Veloctity
 
-	physKeys.append('FreshwaterFlux') 		# Freshwater flux
-	physKeys.append('sowaflup')			# Net Upward Water Flux 
+#	physKeys.append('FreshwaterFlux') 		# Freshwater flux
+#	physKeys.append('sowaflup')			# Net Upward Water Flux 
 #	physKeys.append('soicecov')			# Ice fraction
 
 	##### 
@@ -601,6 +601,19 @@ def analysis_timeseries(jobID = "u-ab671",
                 	ukesmkeys['u3d']     = 'vozocrtx'
         	        ukesmkeys['e3u']    = 'e3u'
 	                ukesmkeys['w3d']     = 'vovecrtz'
+                        #[u'nav_lat', u'nav_lon', u'bounds_nav_lon', u'bounds_nav_lat', u'area', u'deptht', u'deptht_bounds', u'time_centered', u'time_centered_bounds', u'time_counter', u'time_counter_bounds', u'thkcello', u'zos', u'zossq', u'tos_con', u'sos_abs', u'thetaob_con', u'sob_abs', u'thetao_con', u'so_abs', u'somxzint1', u'hfds', u'rsdo', u'sowaflup', u'soicecov', u'ficeberg', u'berg_latent_heat_flux', u'soemp_oce', u'soemp_ice', u'snowpre', u'soprecip', u'fsitherm', u'friver', u'so_erp', u'sfdsi', u'sohflisf', u'sohfcisf', u'sowflisf']
+                elif 'thetao_con' in nctmpkeys:
+                        ukesmkeys['time'] = 'time_counter'
+                        ukesmkeys['temp3d']     = 'thetao_con'
+                        ukesmkeys['sst']        = 'tos_con'
+                        ukesmkeys['sal3d']     = 'so_abs'
+                        ukesmkeys['sss']        = 'sos_abs'
+                        ukesmkeys['v3d']     = 'vo'
+                        ukesmkeys['u3d']     = 'uo'
+                        ukesmkeys['e3u']    = 'thkcello'
+                        ukesmkeys['w3d']     = 'wo'
+                        ukesmkeys['MLD'] = 'somxzint1'
+
 		else:
                 	ukesmkeys['time']       = 'time_centered'
         	        ukesmkeys['temp3d']     = 'thetao'
@@ -611,6 +624,7 @@ def analysis_timeseries(jobID = "u-ab671",
                 	ukesmkeys['u3d']     = 'uo'
         	        ukesmkeys['e3u']    = 'thkcello'
 	                ukesmkeys['w3d']     = 'wo'
+                        ukesmkeys['MLD'] = 'somxl010'
 #	else:		
 #                        ukesmkeys['time']       = 'time_centered'
 #                        ukesmkeys['temp3d']     = 'thetao'
@@ -2649,7 +2663,7 @@ def analysis_timeseries(jobID = "u-ab671",
 		av[name]['modelcoords'] 	= medusaCoords
 		av[name]['datacoords'] 		= mldCoords
 
-		av[name]['modeldetails'] 	= {'name': 'mld', 'vars':['somxl010',],   'convert': applySurfaceMask,'units':'m'}
+		av[name]['modeldetails'] 	= {'name': 'mld', 'vars':[ukesmkeys['MLD'],],   'convert': applySurfaceMask,'units':'m'}
 		#av[name]['modeldetails'] 	= {'name': 'mld', 'vars':[ukesmkeys['temp3d'],],   'convert': calcMLD,'units':'m'}
 		av[name]['datadetails']  	= {'name': 'mld', 'vars':['mld','mask',], 'convert': mldapplymask,'units':'m'}
 

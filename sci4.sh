@@ -3,10 +3,12 @@ x=0
 #while [ 1 -eq 1 ];
 while [ $x -le 60 ]
 do
-    # fast:
-    ./analysis_timeseries.py u-by230 fast #' : 'black', #standard UKESM1.1
-    ./analysis_timeseries.py u-ck416 fast #' : 'black', #standard UKESM1.1
-    ./analysis_timeseries.py u-ck416 level1 #' : 'black', #standard UKESM1.1
+    ./analysis_timeseries.py u-cm977 physics;
+    ./analysis_timeseries.py u-cn618 physics;
+    ./analysis_timeseries.py u-cp416 physics;
+
+#    ./analysis_timeseries.py u-ck416 fast #' : 'black', #standard UKESM1.1
+#    ./analysis_timeseries.py u-ck416 level1 #' : 'black', #standard UKESM1.1
 
 
     #GEOMIP
@@ -22,8 +24,8 @@ do
 #    ./analysis_timeseries.py u-bg157 level1
 #    ./analysis_timeseries.py u-bg158 level1
 #    ./analysis_timeseries.py u-bg159 level1
-
-
+#
+#
 #    ./analysis_timeseries.py u-by230 fast #' : 'black', #standard UKESM1.1
 
 #    ./analysis_timeseries.py u-cf927 fast #' : 'green', #CN-fast standard radiation
