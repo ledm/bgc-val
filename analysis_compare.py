@@ -2763,7 +2763,35 @@ def main():
 		exit
 	else:
 
-
+                GC5N96ORCA1spinup = True
+                if GC5N96ORCA1spinup:
+ 
+                        customColours = {
+	                        'u-cm977': 'red',
+	                        'u-cn618': 'green',
+	                        'u-cp416': 'purple',
+                                }
+                        custom_descriptions = {
+	                        'u-cm977': 'GC5 N96 ORCA1 spin-up 1',
+	                        'u-cn618': 'GC5 N96 ORCA1 spin-up 2',
+	                        'u-cp416': 'GC5 N96 ORCA1 spin-up 3 ',                        
+                        }
+                        cnthicknesses = defaultdict(lambda: 0.7)
+                        linestyles = defaultdict(lambda: '-')
+                        GC5N96ORCA1spinup
+                        timeseries_compare(
+                                customColours,
+                                physics=1,
+                                bio=1,
+                                debug=0,
+                                year0=False,
+                                jobDescriptions=custom_descriptions,
+                                analysisname='GC5N96ORCA1spinup',
+                                lineThicknesses= cnthicknesses,
+                                linestyles = linestyles,)
+                                
+                return 
+                                                
                 UKESM11_fast = True
                 if UKESM11_fast:
  
